@@ -1,0 +1,43 @@
+<center><div class="row" style="display: block;">
+<p>Sign Up Page</p>
+</div>
+
+<%= form_tag("/patients", method: "post") do %>
+<%= label_tag(:name,"Username") %>
+<%= text_field_tag("patient[name]") %>
+<%= label_tag(:email,"Email") %>
+<%= text_field_tag("patient[email]") %>
+<%= label_tag(:password,"Password") %>
+<%= text_field_tag("patient[password]") %><br>
+<br>
+<%= submit_tag("Signup as normal user") %>
+
+<%end%>
+
+<br>
+
+<%= form_tag("/doctors", method: "post") do %>
+<%= label_tag(:name,"Username") %>
+<%= text_field_tag(:name) %>
+<%= label_tag(:email,"Email") %>
+<%= text_field_tag(:email) %>
+<%= label_tag(:password,"Password") %>
+<%= text_field_tag(:password) %><br>
+<br>
+<%= submit_tag("Signup as Registered Doctor") %>
+
+<%end%>
+
+<br>
+
+<%= form_tag("/doctors", method: "post") do %>
+<%= label_tag(:name,"Username") %>
+<%= text_field_tag(:name) %>
+<%= label_tag(:password,"Password") %>
+<%= text_field_tag(:password) %><br>
+<br>
+<%= submit_tag("Sign In") %>
+
+<%end %>
+</div>
+</center>

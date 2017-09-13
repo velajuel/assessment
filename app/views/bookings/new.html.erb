@@ -1,0 +1,58 @@
+The time now is <%= Time.now %>
+<br>
+
+<%= @doctor.name %>
+<%= @doctor.contact_information %>
+<%= @doctor.company_name %>
+<%= @doctor.location %>
+
+<div class="container">
+    
+</div>
+
+
+
+       <%= form_for [@doctor,@booking], data: {confirm: "Your Booking Is Successfull"} do |form| %>
+       <%= form.label :patient_name%><%= form.text_field :patient_name %><br>
+       <%= form.label :treatment_service%>
+       <%= form.text_field :treatment_service %><br>
+       <%= form.label :mobile_number%>
+       <%= form.text_field :mobile_number %><br>
+       <%= form.label :ic_number%>
+       <%= form.text_field :ic_number %><br>
+       <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' name="booking[booking_date]" class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datepicker({
+                	format: "dd/mm/yyyy",
+                	startDate: new Date(),
+                	autoclose:true
+                });
+            });
+        </script>
+    </div>
+    <%= form.select(:booking_time) do %>
+    <% for i in 10..20 do %>
+     <!-- if [i.to_s] & @booked_time == [] -->
+    <%= content_tag(:option, i.to_s+".00", value: i) %>
+         <!-- end  -->
+        <% end %>
+    <% end %>
+      
+       <%= form.hidden_field :doctor_id, value: @doctor.id %>
+       <%= form.submit "Book" %>
+       <% end %>
+
+
+
+
