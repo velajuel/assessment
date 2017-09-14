@@ -36,6 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'jquery-rails'
 
+
 gem 'bootstrap-datepicker-rails'
 
 # Use Capistrano for deployment
@@ -47,6 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development do
